@@ -26,8 +26,7 @@ const getCurrencies = async () =>{
     } catch(error){        
         console.log(error);
         alert("Ha ocurrido un error");
-    }
-    
+    }    
 }
 
 getCurrencies();
@@ -64,14 +63,14 @@ const setSerialChart = (currency, date, currency_name) =>{
                     position: 'top'
                 },
                 title: {
-                    display: false,
+                    display: true,
                     text: "PRECIO ULTIMOS 10 DIAS "+ currency_name.toUpperCase()
                 }
             },
             scales: {
                 y: {
                     title: {
-                        display: false,
+                        display: true,
                         text: axix
                     }
                 },

@@ -1,7 +1,6 @@
 const urlApi = "https://mindicador.cl/api/";
 const currenciesList = ['uf', 'dolar', 'euro', 'bitcoin'];
 const select = document.querySelector("#select_currency");
-
 var myLineChart = new Chart();
 
 const getCurrencies = async () =>{
@@ -83,7 +82,7 @@ const setSerialChart = (currency, date, currency_name) =>{
             }      
         }
         
-    };
+    }
 
     if (myLineChart) {
         myLineChart.destroy();
@@ -125,13 +124,12 @@ const setConversion = () =>{
     if(input){
         let currency_data = select.value.split(",");
         let conversion = input*Number(currency_data[1]);
+        getSerialCurrency(currency_data[0]);
         if(currency_data[0] == "bitcoin"){
-            result.innerHTML = "$ "+ dollarUSLocale.format(conversion*dolar);
-            getSerialCurrency(currency_data[0]);
+            result.innerHTML = "$ "+ dollarUSLocale.format(conversion*dolar);            
         }
         else{
-            result.innerHTML = "$ " + dollarUSLocale.format(conversion);       
-            getSerialCurrency(currency_data[0]);
+            result.innerHTML = "$ " + dollarUSLocale.format(conversion);                  
         }
     } else{
         alert("Ingrese un monto en CLP");
